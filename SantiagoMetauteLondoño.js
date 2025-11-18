@@ -1,0 +1,200 @@
+// PUNTO 1
+let puntos = [10, 20, 30, 40];
+
+let puntosDoble = puntos.map(function(numero){
+    return numero * 2;
+});
+
+console.log(puntos);
+console.log(puntosDoble);
+
+// PUNTO 2
+let usuarios = [{id: 1, nombre: "Ana"}, {id: 2, nombre: "Luis"}, {id: 3, nombre: "Carlos"}];
+
+let nombres = usuarios.map(function(usuario) {
+  return usuario.nombre;
+});
+
+console.log(nombres);
+
+// PUNTO 3
+let notas = [8, 5, 10, 3, 7];
+
+let aprobadas = notas.filter(function(nota) {
+  return nota >= 6;
+});
+
+console.log(aprobadas);
+
+// PUNTO 4
+let productos = [{nombre: "Camisa", stock: 10}, {nombre: "Zapatos", stock: 0}, {nombre: "Pantalón", stock: 5}];
+
+let enStock = productos.filter(function(producto){
+    return producto.stock > 0;
+});
+
+console.log(enStock);
+
+// PUNTO 5 
+let ventas = [150, 300, 100, 50];
+
+let totalVentas = ventas.reduce(function(acumulado, venta){
+    return acumulado + venta;
+})
+
+console.log("total: ", totalVentas);
+
+// PUNTO 6
+ let grupos = [["Ana", "Luis"], ["Maria", "Juan"], ["Pedro"]];
+
+ let listaPlana = grupos.reduce(function(acumulado, grupo){
+  return acumulado.concat(grupo);
+ })
+console.log(grupos);
+console.log(listaPlana);
+
+// PUNTO 7
+let original = ["A", "B", "C"];
+
+let clon = original.slice()
+
+clon.push("D")
+
+console.log(original);
+console.log(clon);
+
+// PUNTO 8
+let competidores = ["Oro", "Plata", "Bronce", "Mención 1", "Mención 2"];
+
+let podio = competidores.slice(0, 3)
+
+console.log(podio);
+
+// PUNTO 9
+let equipoDev = ["Ana", "Juan"]; let equipoQA = ["Carlos", "Maria"];
+
+let equipoCompleto = equipoDev.concat(equipoQA)
+
+console.log(equipoCompleto);
+
+// PUNTO 10
+let carrito = ["Manzana"];
+
+
+let nuevoCarrito = carrito.slice()
+
+nuevoCarrito.push("Pera")
+
+console.log(carrito);
+console.log(nuevoCarrito);
+
+// PUNTO 11
+let roles = ["USER", "EDITOR"];
+
+let tieneAdmin = roles.includes("ADMIN");
+
+let tieneEditor = roles.includes("EDITOR");
+
+console.log("Tiene ADMIN?:", tieneAdmin);
+console.log("Tiene EDITOR?:", tieneEditor);
+
+// PUNTO 12
+let usuarios1 = [{id: 101, nombre: "Ana"}, {id: 102, nombre: "Luis"}, {id: 103, nombre: "Carlos"}];
+
+let usuarioLuis = usuarios1.find(function(usuario){
+  if (usuario.id === 102) {
+    return true;
+  }
+});
+
+console.log("Lista completa:", usuarios1);
+console.log(usuarioLuis);
+
+// PUNTO 13
+let invitados = ["Zapata", "Alvarez", "Gomez", "Bernal"];
+
+let invitadosOrdenados = [...invitados].sort()
+
+console.log(invitados);
+console.log(invitadosOrdenados);
+
+// PUNTO 14
+let receta = ["Paso 1", "Paso 2", "Paso 3"];
+
+let recetaInversa = [...receta].reverse()
+
+console.log(receta);
+console.log(recetaInversa);
+
+// PUNTO 15
+let fila = ["Ana", "Luis", "Carlos", "Maria"];
+
+let eliminar = "Luis"
+
+let nuevaFila = [...fila].filter(function(nombreFila){
+  return nombreFila !== eliminar
+})
+
+console.log(fila);
+console.log(nuevaFila);
+
+// PUNTO 16
+let fila1 = ["Ana", "Luis", "Carlos", "Maria"];
+
+let nuevaFilaConJorge = [...fila.slice(0, 1), "Jorge", ...fila.slice(1)]
+
+console.log(fila1);
+console.log(nuevaFilaConJorge);
+
+// PUNTO 17
+let tablero = ["X", "O", "X"];
+
+let tableroNuevo = [...tablero].map(function(usuarioTablero, indice){
+  if (indice === 1) {
+    return "X";       
+  } else {
+    return usuarioTablero;  
+  }
+});
+
+console.log(tablero);
+console.log(tableroNuevo); 
+
+// PUNTO 18
+let productos1 = [{ nombre: "Papas", precio: 2 },{ nombre: "Carne", precio: 15 },{ nombre: "Leche", precio: 3 }];
+
+let filtrados = productos1.filter(function(item){
+  return item.precio > 4;
+});
+
+let productosCaros = filtrados.map(function(p){
+  return p.nombre;
+});
+
+console.log(productosCaros);
+
+// PUNTO 19 
+let feed = ["Noticia 1", "Noticia 2", "Noticia 3"];
+
+let nuevoFeed = ["Noticia Urgente"].concat(feed);
+
+console.log(nuevoFeed);
+
+// PUNTO 20
+let puntuaciones = [50, 85, -10, 100, 0, 30];
+
+let validas = puntuaciones.filter(function(puntos){
+  return puntos >= 0;
+});
+
+let bonificadas = validas.map(function(puntos){
+  return puntos + 10;
+});
+
+let totalPuntos = bonificadas.reduce(function(acumulado, puntos){
+  return acumulado + puntos;
+}, 0);
+
+console.log("Puntuaciones válidas:", validas);
+console.log("Bonificadas:", bonificadas);
+console.log("Total de puntos:", totalPuntos);
